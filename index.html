@@ -4,30 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vimscript to Lua Keymap Converter</title>
+    
+    <!-- Prism.js CSS for syntax highlighting theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Vimscript to Lua Keymap Converter</h1>
-        <p>Paste your <code>.vimrc</code> keymaps below to convert them to <code>init.lua</code> format.</p>
+        <p>Your <code>.vimrc</code> keymaps will be converted live as you type or paste.</p>
     </header>
 
     <main class="container">
         <div class="editor-pane">
             <h2>Vimscript Input (.vimrc)</h2>
-            <textarea id="vimscript-input" spellcheck="false" placeholder="nnoremap <leader>w :w<CR>"></textarea>
+            <div class="editor-wrapper">
+                <textarea id="vimscript-input" class="editor-textarea" spellcheck="false"></textarea>
+                <pre><code id="vimscript-highlight" class="language-vim"></code></pre>
+            </div>
         </div>
         <div class="editor-pane">
             <h2>Lua Output (init.lua)</h2>
-            <textarea id="lua-output" spellcheck="false" readonly placeholder="vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })"></textarea>
+            <div class="editor-wrapper">
+                <!-- This textarea is hidden but holds the value for the copy button -->
+                <textarea id="lua-output-textarea" class="editor-textarea" spellcheck="false" readonly></textarea>
+                <pre><code id="lua-highlight" class="language-lua"></code></pre>
+            </div>
         </div>
     </main>
 
     <footer>
-        <button id="convert-btn">Convert</button>
-        <button id="copy-btn">Copy to Clipboard</button>
+        <button id="copy-btn">Copy Lua to Clipboard</button>
     </footer>
 
+    <!-- Prism.js Core & Components -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    
     <script src="app.js"></script>
 </body>
 </html>

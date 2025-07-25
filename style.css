@@ -11,6 +11,7 @@ body {
 header, footer {
     text-align: center;
     padding: 1rem;
+    flex-shrink: 0;
 }
 
 h1 {
@@ -21,7 +22,8 @@ h1 {
     display: flex;
     flex-grow: 1;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 0 1rem 1rem;
+    min-height: 0; /* Allows flex children to shrink */
 }
 
 .editor-pane {
@@ -30,18 +32,47 @@ h1 {
     flex-direction: column;
 }
 
-textarea {
-    width: 100%;
+.editor-wrapper {
+    position: relative;
     flex-grow: 1;
-    background-color: #282a36; /* A slightly different dark color */
-    color: #f8f8f2;
+    height: 100%;
+}
+
+/* Common styles for both textarea and pre/code block to ensure text aligns */
+.editor-textarea, .editor-wrapper pre[class*="language-"] {
+    margin: 0;
+    padding: 1rem;
     border: 1px solid #44475a;
     border-radius: 8px;
-    padding: 1rem;
     font-family: "Fira Code", "JetBrains Mono", monospace;
     font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre;
+    word-wrap: normal;
+    overflow: auto;
+    box-sizing: border-box; /* Crucial for alignment */
+}
+
+/* The actual textarea is layered underneath, transparent */
+.editor-textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     resize: none;
-    box-sizing: border-box;
+    background: transparent;
+    color: transparent; /* Makes text invisible */
+    caret-color: white; /* Makes the cursor visible */
+    z-index: 1;
+}
+
+/* The <pre> block is for displaying the highlighted code */
+.editor-wrapper pre[class*="language-"] {
+    position: relative;
+    z-index: 0;
+    pointer-events: none; /* Clicks go through to the textarea */
+    height: 100%;
 }
 
 button {
@@ -59,8 +90,4 @@ button {
 
 button:hover {
     background-color: #a6e3a1; /* Green */
-}
-
-#copy-btn {
-    background-color: #74c7ec;
 }
