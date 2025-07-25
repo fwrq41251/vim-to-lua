@@ -39,7 +39,9 @@ h1 {
 }
 
 /* Common styles for both textarea and pre/code block to ensure text aligns */
-.editor-textarea, .editor-wrapper pre[class*="language-"] {
+.editor-textarea,
+.editor-wrapper pre[class*="language-"],
+.editor-wrapper pre[class*="language-"] > code[class*="language-"] {
     margin: 0;
     padding: 1rem;
     border: 1px solid #44475a;
@@ -51,6 +53,17 @@ h1 {
     word-wrap: normal;
     overflow: auto;
     box-sizing: border-box; /* Crucial for alignment */
+}
+
+.editor-wrapper pre[class*="language-"] > code[class*="language-"] {
+    /* Reset any specific styles from the theme that could cause misalignment */
+    display: block;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
 }
 
 /* The actual textarea is layered underneath, transparent */
@@ -65,6 +78,11 @@ h1 {
     color: transparent; /* Makes text invisible */
     caret-color: white; /* Makes the cursor visible */
     z-index: 1;
+}
+
+/* Style the selection to be semi-transparent */
+.editor-textarea::selection {
+    background-color: rgba(137, 180, 250, 0.3); /* Use a theme color with alpha */
 }
 
 /* The <pre> block is for displaying the highlighted code */
