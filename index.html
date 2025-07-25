@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimscript to Lua Keymap Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vimscript to Lua Keymap Converter</h1>
+        <p>Paste your <code>.vimrc</code> keymaps below to convert them to <code>init.lua</code> format.</p>
+    </header>
+
+    <main class="container">
+        <div class="editor-pane">
+            <h2>Vimscript Input (.vimrc)</h2>
+            <textarea id="vimscript-input" spellcheck="false" placeholder="nnoremap <leader>w :w<CR>"></textarea>
+        </div>
+        <div class="editor-pane">
+            <h2>Lua Output (init.lua)</h2>
+            <textarea id="lua-output" spellcheck="false" readonly placeholder="vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })"></textarea>
+        </div>
+    </main>
+
+    <footer>
+        <button id="convert-btn">Convert</button>
+        <button id="copy-btn">Copy to Clipboard</button>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

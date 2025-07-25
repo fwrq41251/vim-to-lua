@@ -1,0 +1,66 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #1e1e2e; /* Catppuccin Macchiato Base */
+    color: #cad3f5; /* Catppuccin Macchiato Text */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+h1 {
+    color: #89dceb; /* Cyan */
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.editor-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    flex-grow: 1;
+    background-color: #282a36; /* A slightly different dark color */
+    color: #f8f8f2;
+    border: 1px solid #44475a;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: "Fira Code", "JetBrains Mono", monospace;
+    font-size: 1rem;
+    resize: none;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #89b4fa; /* Blue */
+    color: #1e1e2e;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin: 0 0.5rem;
+}
+
+button:hover {
+    background-color: #a6e3a1; /* Green */
+}
+
+#copy-btn {
+    background-color: #74c7ec;
+}
