@@ -1,7 +1,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #1e1e2e; /* Catppuccin Macchiato Base */
-    color: #cad3f5; /* Catppuccin Macchiato Text */
+    background-color: #24283b; /* Tokyo Night Storm Background */
+    color: #a9b1d6; /* Tokyo Night Storm Foreground */
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ header, footer {
 }
 
 h1 {
-    color: #89dceb; /* Cyan */
+    color: #7aa2f7; /* Tokyo Night Storm Blue */
 }
 
 .container {
@@ -44,7 +44,7 @@ h1 {
 .editor-wrapper pre[class*="language-"] > code[class*="language-"] {
     margin: 0;
     padding: 1rem;
-    border: 1px solid #44475a;
+    border: 1px solid #414868; /* Tokyo Night Storm Gutter */
     border-radius: 8px;
     font-family: "Fira Code", "JetBrains Mono", monospace;
     font-size: 1rem;
@@ -94,8 +94,8 @@ h1 {
 }
 
 button {
-    background-color: #89b4fa; /* Blue */
-    color: #1e1e2e;
+    background-color: #7aa2f7; /* Tokyo Night Storm Blue */
+    color: #24283b;
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -107,5 +107,5 @@ button {
 }
 
 button:hover {
-    background-color: #a6e3a1; /* Green */
+    background-color: #9ece6a; /* Tokyo Night Storm Green */
 }
