@@ -21,7 +21,9 @@
         <div class="editor-pane">
             <h2>Vimscript Input (.vimrc)</h2>
             <div class="editor-wrapper">
-                <textarea id="vimscript-input" class="editor-textarea" spellcheck="false"></textarea>
+                <textarea id="vimscript-input" class="editor-textarea" spellcheck="false">noremap <leader>w :w<cr>
+nnoremap <leader>pv :Vexplore<cr>
+inoremap jk <esc></textarea>
                 <pre><code id="vimscript-highlight" class="language-vim"></code></pre>
             </div>
         </div>
